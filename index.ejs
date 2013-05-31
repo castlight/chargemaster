@@ -10,23 +10,40 @@
     <h1>What does your hospital charge?</h1>
     
     <form action="#" method="POST">
-      <input type="text" size="60" name="loc" value="San Francisco, CA" />
-      <input type="submit" value="Set Location" />
+      <input type="text" size="60" name="city" value="San Francisco, CA" />
+      <input type="submit" value="Set Location" name="set" />
     </form>
 
-    <% for (var i = 0; i < data.length; i++) { %>
+    <div data-accordion>
+      <% for (var i = 0; i < data.length; i++) { %>
       <% var mrg = data[i]; %>
-      <h2><%= mrg.name %></h2>
-      <% for (var j = 0; j < mrg.DRGs.length; j++) { %>
-        <% var drg = mrg.DRGs[j]; %>
-        <h3>
-          <a href="/detail?code=<%= drg.code %>&city=San+Francisco,+CA"><%= drg.name %></a></h3>
+      <div class="section">
+        <div class="section_header current" style="padding:15px 15px 30px 15px;">
+          <!--<div class="accordion_title_right">Title Left</div>-->
+          <div class="accordion_title_left"><%= mrg.name %></div>
+        </div>
+        <div class="section_body">
+          <% for (var j = 0; j < mrg.DRGs.length; j++) { %>
+            <% var drg = mrg.DRGs[j]; %>
+            <h3>
+              <a rel="detail" href="/detail?code=<%= drg.code %>"><%= drg.name %></a></h3>
+          <% } %>
+        </div>
+      </div>
       <% } %>
-    <% } %>
+    </div>
 
     <script src="/public/core.js"></script>
     <script>
       $(function() {
+        
+        $("a[rel=detail]").click(function() {
+          var href = $(this).attr("href");
+          var city = $("form input[name=city]").val();
+          href += "&city=" + encodeURIComponent(city);
+          window.location.href = href;
+          return false;
+        });
       });
     </script>
   </body>
