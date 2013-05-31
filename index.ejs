@@ -2,25 +2,49 @@
 <html>
   <head>
     <title>Chargemasters</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
-    <script type="text/template" id="data">
-      <%- data %>
-    </script>
+    <link rel="stylesheet" href="/public/core.css"></link>
+    <script src="/public/core_head.js"></script>
   </head>
 
   <body>
     <h1>What does your hospital charge?</h1>
     
-    <form action="/detail" method="GET">
-      <input type="text" size="60" name="q" />
-      <input type="submit" value="Search" />
+    <form action="javascript:void(0)" method="POST">
+      <input type="text" size="60" name="city" value="San Francisco, CA" />
+      <input type="submit" value="Set Location" name="set" />
     </form>
 
+    <div data-accordion>
+      <% for (var i = 0; i < data.length; i++) { %>
+      <% var mrg = data[i]; %>
+      <div class="section">
+        <div class="section_header current" style="padding:15px 15px 30px 15px;">
+          <!--<div class="accordion_title_right">Title Left</div>-->
+          <div class="accordion_title_left"><%= mrg.name %></div>
+        </div>
+        <div class="section_body">
+          <% for (var j = 0; j < mrg.DRGs.length; j++) { %>
+            <% var drg = mrg.DRGs[j]; %>
+            <h3>
+              <a rel="detail" href="/detail?code=<%= drg.code %>"><%= drg.name %></a></h3>
+          <% } %>
+        </div>
+      </div>
+      <% } %>
+    </div>
+
+    <script src="/public/core.js"></script>
     <script>
       $(function() {
-        var data = $("script#data").html();
-        data = $.parseJSON(data);
-        console.log("Data", data);
+
+        $("a[rel=detail]").click(function() {
+          var href = $(this).attr("href");
+          var city = $("form input[name=city]").val();
+          href += "&city=" + encodeURIComponent(city);
+          window.location.href = href;
+          return false;
+        });
+
       });
     </script>
   </body>
