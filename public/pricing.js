@@ -67,7 +67,9 @@ $(function() {
       };
 
       $('body').empty()
-	.append(DIV(HEADER(H2(city, ', ', state),
+	.append(DIV(HEADER(A({ clas : 'back-button',
+			       href: '/'}),
+			   H2(city, ', ', state),
 			   H2(drg.name)),
 		    DIV({ clas : 'charge-frame' },
 			DIV({ clas : 'charges' },
