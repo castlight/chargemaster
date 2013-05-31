@@ -22,7 +22,7 @@
       <% for (var i = 0; i < data.length; i++) { %>
       <% var mrg = data[i]; %>
       <div class="section" style="">
-        <div class="section_header" style="padding:15px 15px 30px 15px; background:#eee4d4">
+        <div class="section_header" style="padding:5px 5px 25px 5px; background:#eee4d4">
           <!--<div class="accordion_title_right">Title Left</div>-->
           <div class="accordion_title_left"><%= mrg.name %></div>
         </div>
@@ -31,7 +31,7 @@
             <% var drg = mrg.DRGs[j]; %>
             <h3>
               <a rel="detail" href="/detail#code=<%= drg.code %>"
-                style="color:blue"><%= drg.name %></a></h3>
+                style="color:#12778e"><%= drg.name %></a></h3>
           <% } %>
         </div>
       </div>
