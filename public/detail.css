@@ -99,3 +99,12 @@ header h2 {
     height: 30px;
     width: 57px;
 }
+.help-button {
+    position: absolute;
+    display: block;
+    background-image: url('/public/helpbutton.png');
+    height: 30px;
+    width: 32px;
+    right: 60px;
+    top: 15px;
+}
