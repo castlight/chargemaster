@@ -3,11 +3,11 @@
     "name": "Head Problems",
     "DRGs": [
       {
-        "code": "000300",
+        "code": "1",
         "name": "Headache"
       },
       {
-        "code": "000301",
+        "code": "2",
         "name": "Earache"
       }
     ]
