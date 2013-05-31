@@ -16,7 +16,8 @@ $(function() {
       var charges = $.grep(drg.charges, 
 			   function(charge) {
 			     var hospital = Hospitals[charge.hospital];
-			     return (hospital.city.toLowerCase() === city.toLowerCase()) &&
+			     return hospital &&
+			       (hospital.city.toLowerCase() === city.toLowerCase()) &&
 			       (hospital.state.toLowerCase() === state.toLowerCase());
 			   });
       var mx = (drg.us_average && drg.us_average.chargemaster) || 0;
