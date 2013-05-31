@@ -29,7 +29,7 @@ $(function() {
 	    });
 
       var asPrice = function(p) {
-	return sprintf('$%0.2f', p / 100.0);
+	return sprintf('$%0d', Math.floor(p / 100.0));
       }
 
       var priceLine = function(name, price, clas, label) {
