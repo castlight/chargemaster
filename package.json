@@ -1,0 +1,7 @@
+{
+  "name": "chargemaster",
+  "version": "0.0.0",
+  "devDependencies": {
+    "express": "~3.2.4"
+  }
+}
