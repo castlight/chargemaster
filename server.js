@@ -5,6 +5,7 @@ var express = require('express'),
 ;
 
 var app = express();
+app.set('view engine', 'ejs');
 
 app.use(express.cookieParser());
 app.use(express.bodyParser());
@@ -15,7 +16,13 @@ app.use('/data/', express.static(__dirname + "/data"));
 
 // send root page to app file or login
 app.get('/', function(req, res) {
-  res.sendfile(docroot + "/index.html");
+  res.render(__dirname + "/index.ejs");
+});
+
+app.get('/detail', function (req, res){
+  var q = req.body.q;
+  var drg = 1;
+  res.render(__dirname + "/detail.ejs", { 'drg': drg }); 
 });
 
 app.listen(5000);
