@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    color: #444;
+}
+
+header {
+    padding: 12px 20px;
+    background-color: #eee4d4;
+    border: thin solid gray;
+}
+
+header h2 {
+    margin: 2px;
+    font-size: 20px;
+}
+
+.charge {
+    padding: 20px;
+    border-bottom: thin solid gray;
+}
+
+.charge h4 {
+    margin-top: 0px;
+}
+
+.price {
+    float: right;
+    display: inline-block;
+}
+
+.price-line {
+    margin-top: 5px;
+}
+
+.price-bar {
+    border-radius: 6px;
+    height: 58%;
+    display: inline-block;
+    text-align: center;
+    padding-top: 3px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+.medicare .price-bar {
+    background-color:  #68b8bc;
+}
+
+.chargemaster .price-bar {
+    background-color: #d64026;
+}
+
+.price-bar-frame {
+    height: 30px;
+}
