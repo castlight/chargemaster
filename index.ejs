@@ -6,7 +6,7 @@
     <script src="/public/core_head.js"></script>
   </head>
 
-  <body class="section span12">
+  <body class="section span8">
 
     <div class="row">
       <h1 style="float:left">What does your hospital charge?</h1>
@@ -49,8 +49,13 @@
 
         $("a[rel=detail]").click(function() {
           var href = $(this).attr("href");
-          var city = $("form input[name=city]").val();
-          href += "&city=" + encodeURIComponent(city);
+          var cityst = $("form input[name=city]").val().trim();
+          if (cityst == "") return false;
+          cityst = cityst.split(',');
+          var city = cityst[0].trim();
+          var state = cityst[1].trim();
+          href += "#city=" + encodeURIComponent(city);
+          href += "&state=" + encodeURIComponent(state);
           window.location.href = href;
           return false;
         });
