@@ -7,12 +7,20 @@
   </head>
 
   <body class="section span12">
-    <h1>What does your hospital charge?</h1>
+
+    <div class="row">
+      <h1 style="float:left">What does your hospital charge?</h1>
+      <img src="/public/logo.png" style="float:right" />
+    </div>
     
-    <form action="javascript:void(0)" method="POST">
-      <input type="text" size="60" name="city" value="San Francisco, CA" />
-      <input type="submit" value="Set Location" name="set" />
-    </form>
+    <div class="section">
+      <form action="javascript:void(0)" method="POST" class="search">
+        <input type="text" size="60" name="city" value="San Francisco, CA" class="query" />
+        <a class="button search" href="#" name="set">
+          <label>Set Location</label>
+        </a>
+      </form>
+    </div>
 
     <p><a href="/public/costs.html">How to help lower your costs</a></p>
 
