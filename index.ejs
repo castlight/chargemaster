@@ -9,7 +9,7 @@
   <body>
     <h1>What does your hospital charge?</h1>
     
-    <form action="#" method="POST">
+    <form action="javascript:void(0)" method="POST">
       <input type="text" size="60" name="city" value="San Francisco, CA" />
       <input type="submit" value="Set Location" name="set" />
     </form>
@@ -36,7 +36,7 @@
     <script src="/public/core.js"></script>
     <script>
       $(function() {
-        
+
         $("a[rel=detail]").click(function() {
           var href = $(this).attr("href");
           var city = $("form input[name=city]").val();
@@ -44,6 +44,7 @@
           window.location.href = href;
           return false;
         });
+
       });
     </script>
   </body>
