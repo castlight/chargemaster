@@ -16,8 +16,8 @@ $(function() {
       var charges = $.grep(drg.charges, 
 			   function(charge) {
 			     var hospital = Hospitals[charge.hospital];
-			     return (hospital.city === city.toLowerCase()) &&
-			       (hospital.state === state.toLowerCase());
+			     return (hospital.city.toLowerCase() === city.toLowerCase()) &&
+			       (hospital.state.toLowerCase() === state.toLowerCase());
 			   });
       var mx = (drg.us_average && drg.us_average.chargemaster) || 0;
       $.map(charges,
@@ -67,11 +67,16 @@ $(function() {
       };
 
       $('body').empty()
-	.append(DIV(HEADER(H2(city, ', ', state),
+	.append(DIV(HEADER(A({ clas : 'back-button',
+			       href: '/'}),
+			   H2(city, ', ', state),
 			   H2(drg.name)),
-		    DIV({ clas : 'charges' },
-			drg.us_average && displayCharge('US Average', drg.us_average),
-			$.map(charges, displayHospitalCharge))));
+		    DIV({ clas : 'charge-frame' },
+			DIV({ clas : 'charges' },
+			    drg.us_average && displayCharge('US Average', drg.us_average),
+			    $.map(charges, displayHospitalCharge))),
+		    FOOTER(A({ clas : 'unafforable',
+			       href : "/public/costs.html"}, 'Help, I cannot afford this'))));
     }
   };
 
