@@ -16,7 +16,8 @@ app.use('/data/', express.static(__dirname + "/data"));
 
 // send root page to app file or login
 app.get('/', function(req, res) {
-  res.render(__dirname + "/index.ejs");
+  var data = require(__dirname + '/data/drgs.json');
+  res.render(__dirname + "/index.ejs", { 'data': JSON.stringify(data) });
 });
 
 app.get('/detail', function (req, res){

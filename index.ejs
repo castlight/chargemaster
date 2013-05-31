@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>Chargemasters</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <script type="text/template" id="data">
+      <%- data %>
+    </script>
   </head>
 
   <body>
@@ -9,8 +13,16 @@
     
     <form action="/detail" method="GET">
       <input type="text" size="60" name="q" />
+      <input type="submit" value="Search" />
     </form>
 
+    <script>
+      $(function() {
+        var data = $("script#data").html();
+        data = $.parseJSON(data);
+        console.log("Data", data);
+      });
+    </script>
   </body>
 </html>
 
