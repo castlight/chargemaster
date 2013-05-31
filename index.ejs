@@ -6,13 +6,15 @@
     <script src="/public/core_head.js"></script>
   </head>
 
-  <body>
+  <body class="section span12">
     <h1>What does your hospital charge?</h1>
     
     <form action="javascript:void(0)" method="POST">
       <input type="text" size="60" name="city" value="San Francisco, CA" />
       <input type="submit" value="Set Location" name="set" />
     </form>
+
+    <p><a href="/public/costs.html">How to help lower your costs</a></p>
 
     <div data-accordion>
       <% for (var i = 0; i < data.length; i++) { %>
