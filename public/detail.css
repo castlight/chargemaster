@@ -36,6 +36,7 @@ footer {
 header h2 {
     margin: 0px 66px;
     font-size: 20px;
+    text-align: center;
 }
 
 .charge {
@@ -98,6 +99,7 @@ header h2 {
     background-image: url('/public/backbutton.png');
     height: 30px;
     width: 57px;
+    top: 15px;
 }
 .help-button {
     position: absolute;
