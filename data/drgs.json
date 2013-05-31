@@ -1,3 +1,28 @@
-{
-  "foo": "bar"
-}
+var MRGs = [
+    {
+      name: 'Head Problems'
+      DRGs: [
+	{
+	  code: '000300',
+	  name: 'Headache'
+	},
+	{
+	  code: '000301',
+	  name: 'Earache'
+	}
+      ]
+    },
+    {
+      name: 'Tummy Problems'
+      DRGs: [
+	{
+	  code: '000400',
+	  name: 'Tummy Ache'
+	},
+	{
+	  code: '000401',
+	  name: 'Duodenal Ulcer'
+	}
+      ]
+    }
+]
