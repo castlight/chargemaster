@@ -34,8 +34,10 @@ footer {
 }
 
 header h2 {
-    margin: 0px 66px;
-    font-size: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 19px;
+    margin: 0 66px;
     text-align: center;
 }
 
