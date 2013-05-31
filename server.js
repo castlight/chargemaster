@@ -22,10 +22,15 @@ app.get('/', function(req, res) {
 });
 
 app.get('/detail', function (req, res){
-  var code = parseInt(req.body.id);
-  var loc = "San Francisco, CA";
+  var code = parseInt(req.query.code);
+  var city = req.query.city;
   var data = { foo: "baz" }; // var data = require(__dirname + '/data/???.json');
-  res.render(__dirname + "/detail.ejs", { 'data': data });
+
+  res.render(__dirname + "/detail.ejs", {
+  	'code': code,
+  	'city': city,
+  	'data': data
+  });
 });
 
 app.listen(5000);
