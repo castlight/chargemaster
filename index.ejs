@@ -30,7 +30,8 @@
           <% for (var j = 0; j < mrg.DRGs.length; j++) { %>
             <% var drg = mrg.DRGs[j]; %>
             <h3>
-              <a rel="detail" href="/detail#code=<%= drg.code %>"><%= drg.name %></a></h3>
+              <a rel="detail" href="/detail#code=<%= drg.code %>"
+                style="color:blue"><%= drg.name %></a></h3>
           <% } %>
         </div>
       </div>
