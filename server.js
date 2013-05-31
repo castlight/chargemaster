@@ -13,6 +13,7 @@ app.use(express.logger());
 
 // serve main site assets
 app.use('/data/', express.static(__dirname + "/data"));
+app.use('/public/', express.static(__dirname + "/public"));
 
 // send root page to app file or login
 app.get('/', function(req, res) {
