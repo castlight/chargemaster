@@ -6,36 +6,32 @@
     <script src="/public/core_head.js"></script>
   </head>
 
-  <body class="section span8">
+  <body class="section" style="width:360px">
 
-    <div class="row">
-      <h1 style="float:left">What does your hospital charge?</h1>
-      <img src="/public/logo.png" style="float:right" />
-    </div>
-    
-    <div class="section">
+    <div class="row" style="background:url(/public/home-topimage.png); width:360px; height:213px; padding-left: 10px">
+      <p class="strong" style="padding:60px 0 0 10px">What does your hospital charge?</p>
       <form action="javascript:void(0)" method="POST" class="search">
-        <input type="text" size="60" name="city" value="San Francisco, CA" class="query" />
+        <input type="text" name="city" value="San Francisco, CA" class="query" style="width:260px;margin-left:5px" />
         <a class="button search" href="#" name="set">
-          <label>Set Location</label>
+          <label>Ok</label>
         </a>
       </form>
     </div>
-
-    <p><a href="/public/costs.html">How to help lower your costs</a></p>
+    
+    <!--<p><a href="/public/costs.html">How to help lower your costs</a></p>-->
 
     <div data-accordion>
       <% for (var i = 0; i < data.length; i++) { %>
       <% var mrg = data[i]; %>
-      <div class="section">
-        <div class="section_header current" style="padding:15px 15px 30px 15px;">
+      <div class="section" style="">
+        <div class="section_header current" style="padding:15px 15px 30px 15px; background:#eee4d4">
           <!--<div class="accordion_title_right">Title Left</div>-->
           <div class="accordion_title_left"><%= mrg.name %></div>
         </div>
         <div class="section_body">
           <% for (var j = 0; j < mrg.DRGs.length; j++) { %>
             <% var drg = mrg.DRGs[j]; %>
-            <h3>
+            <h3 >
               <a rel="detail" href="/detail?code=<%= drg.code %>"><%= drg.name %></a></h3>
           <% } %>
         </div>
