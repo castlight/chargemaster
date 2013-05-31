@@ -18,20 +18,18 @@
       </form>
     </div>
     
-    <!--<p><a href="/public/costs.html">How to help lower your costs</a></p>-->
-
-    <div data-accordion>
+    <div data-accordion style="display:none">
       <% for (var i = 0; i < data.length; i++) { %>
       <% var mrg = data[i]; %>
       <div class="section" style="">
-        <div class="section_header current" style="padding:15px 15px 30px 15px; background:#eee4d4">
+        <div class="section_header" style="padding:15px 15px 30px 15px; background:#eee4d4">
           <!--<div class="accordion_title_right">Title Left</div>-->
           <div class="accordion_title_left"><%= mrg.name %></div>
         </div>
-        <div class="section_body">
+        <div class="section_body" style="padding:10px;">
           <% for (var j = 0; j < mrg.DRGs.length; j++) { %>
             <% var drg = mrg.DRGs[j]; %>
-            <h3 >
+            <h3>
               <a rel="detail" href="/detail#code=<%= drg.code %>"><%= drg.name %></a></h3>
           <% } %>
         </div>
@@ -42,11 +40,11 @@
     <script src="/public/core.js"></script>
     <script>
       $(function() {
-
+        $("[data-accordion]").show();
         $("a[rel=detail]").click(function() {
           var href = $(this).attr("href");
           var cityst = $("form input[name=city]").val().trim();
-          if (cityst == "") return false;
+          if (cityst == "" || cityst.indexOf(",") < 0) return false;
           cityst = cityst.split(',');
           var city = cityst[0].trim();
           var state = cityst[1].trim();
