@@ -85,5 +85,8 @@ $(function() {
   var h = getHash();
   $.getJSON('/data/drg-' + (h.code || 1) + '.js', function(drg) {
     display(drg, h.city || 'San Francisco', h.state || 'CA');
+  }).fail(function() {
+    display({charges : [], name : "Not found" },
+	    h.city || 'San Francisco', h.state || 'CA');
   });
-});
+})
