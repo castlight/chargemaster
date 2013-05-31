@@ -24,7 +24,8 @@ app.get('/', function(req, res) {
 app.get('/detail', function (req, res){
   var q = req.body.q;
   var drg = 1;
-  res.render(__dirname + "/detail.ejs", { 'drg': drg }); 
+  var data = { foo: "baz" };
+  res.render(__dirname + "/detail.ejs", { 'drg': drg, 'data': JSON.stringify(data), 'q': q });
 });
 
 app.listen(5000);
