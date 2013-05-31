@@ -25,7 +25,7 @@ app.get('/detail', function (req, res){
   var code = parseInt(req.body.id);
   var loc = "San Francisco, CA";
   var data = { foo: "baz" }; // var data = require(__dirname + '/data/???.json');
-  res.render(__dirname + "/detail.ejs", { data: 'data' });
+  res.render(__dirname + "/detail.ejs", { 'data': data });
 });
 
 app.listen(5000);
