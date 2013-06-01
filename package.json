@@ -1,8 +1,12 @@
 {
   "name": "chargemaster",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "devDependencies": {
     "express": "~3.2.4",
     "ejs": "~0.8.4"
+  },
+  "engines": {
+    "node": "0.10.4",
+    "npm": "1.2.18"
   }
 }
