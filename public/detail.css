@@ -98,7 +98,7 @@ header h2 {
 .back-button {
     position: absolute;
     display: block;
-    background-image: url('/public/backbutton.png');
+    background-image: url('backbutton.png');
     height: 30px;
     width: 57px;
     top: 15px;
@@ -106,7 +106,7 @@ header h2 {
 .help-button {
     position: absolute;
     display: block;
-    background-image: url('/public/helpbutton.png');
+    background-image: url('helpbutton.png');
     height: 30px;
     width: 32px;
     right: 60px;
