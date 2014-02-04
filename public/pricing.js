@@ -142,7 +142,7 @@ $(function() {
 
 
   var populateState = function($state) {
-    $state.append($.map($.unique($.map(Hospitals, function(h) { return h.state; } )).sort(),
+    $state.append($.map($.unique($.map(Hospitals, function(h) { return h.state; } ).sort()).sort(),
            function(state) {
              return $.t.OPTION({ value : state }, state);
            }));
@@ -157,7 +157,7 @@ $(function() {
                                           }),
                                    function(h) {
                                      return h.city;
-                                   })).sort(),
+                                   }).sort()).sort(),
                     function(city) {
                       return $.t.OPTION({ value : city }, city);
                     }));
@@ -169,13 +169,13 @@ $(function() {
 
   var renderHome = function() {
     with ($.t) {
-      var $drgs, $city = SELECT(), $state = SELECT();
+      var $drgs, $city = SELECT(), $state = SELECT({ style : { width : px(60)}});
       $('body')
         .empty()
-        .append(DIV(DIV({ "class": "row", style: { background:"url(public/home-topimage.png)",  width: px(360), height: px(213)}},
+        .append(DIV(DIV({ "class": "row", style: { background:"url(public/home-topimage.png)",  width: "99%", height: px(213)}},
                         P({ "class": "strong", style: { padding: "60px 0 0 10px"}}, "What does your hospital charge?"), 
                         FORM($city, $state)), 
-                    $drgs = DIV({ "data-accordion":"", "class": "castlight_accordion" } )));
+                    $drgs = DIV({ "data-accordion":"", "class": "castlight_accordion", style : { margin : "0 10px" } } )));
 
       populateState($state);
       populateCity($city, lastState);
@@ -185,15 +185,19 @@ $(function() {
 
       $city.val(lastCity);
                 
+      var sortByName = function(a, b) { /* "Other" comes last */
+        return (a.name === 'Other') ? 1 : ((b.name === 'Other') ? -1 :
+                                            (a.name === b.name ? 0 : ((a.name > b.name) ? 1 : -1 )));
+      };
 
       $.getJSON('data/drgs.json', function(drgs) {
-        $.map(drgs,
+        $.map(drgs.sort(sortByName),
               function(mrg) {
                 $drgs.append(DIV( { "class": "section"},
                                     DIV( { "class": "section_header", style: { padding: "5px 5px 25px 5px",  background: "#eee4d4"}},
                                          DIV({ "class": "accordion_title_left"},  mrg.name )).click(toggle($drgs)),
                                     DIV({ "class": "section_body", style: { padding: px(10)}},
-                                        $.map(mrg.DRGs, function(drg) {
+                                        $.map(mrg.DRGs.sort(sortByName), function(drg) {
                                           return H3(A(function() { window.location.hash = "code/" + drg.code + 
                                                                    "?city=" + $city.val() +
                                                                    "&state=" + $state.val();
