@@ -112,3 +112,7 @@ header h2 {
     right: 60px;
     top: 15px;
 }
+
+body {
+    overflow-y: auto;
+}
