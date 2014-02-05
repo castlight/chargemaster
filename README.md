@@ -14,21 +14,21 @@ Wikipedia describes Chargemaster as:
     described as "the central mechanism of the revenue cycle" of a
     hospital.
 
-This program displays the Chargemaster price and the Medicaid price for 100 most common procedures at hospitals around the US.  It is based on the data released by HHS in mid-2013.
+This program displays the Chargemaster rate and the Medicare reimbursement rate for 100 common inpatient and 30 common outpatient procedures at hospitals around the US. It is based on the [Chargemaster data released by CMS](http://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/index.html) in 2013.
 
 ## License
 
 Copyright (c) 2013-2014 Castlight Health. See the LICENSE file for license rights and
 limitations (all rights reserved for now, but soon to be open sourced).
 
-The active elements of this program operate entirely on the browser.  The files can be served from any HTTP or HTTPS server, including a CDN like Amazon's CloudFront.  
+The active elements of this program operate entirely on the browser. The files can be served from any HTTP or HTTPS server, including a CDN like Amazon's CloudFront.  
 
-You can even serve it directly from the file system, by simply opening the index file, with File -> Open, on your Firefox browser.  This method will not work for Chrome, unfortunately; Chrome's security model does not allow the program to open the necessary local data-files with AJAX.
+You can even serve it directly from the file system by simply opening the index file, with File -> Open, on your Firefox browser. This method will not work for Chrome, unfortunately; Chrome's security model does not allow the program to open the necessary local data-files with AJAX.
 
-If you want to run it locally but using a real HTTP server, you can use Python's SimpleHTTPServer, like this:
+If you want to run it locally using a real HTTP server, you can use Python's SimpleHTTPServer:
 
-cd [the directory]
-python -m SimpleHTTPServer 3456
+    cd [the project directory]
+    python -m SimpleHTTPServer 3456
 
 And then go to http://localhost:3456/ on your browser.
 
