@@ -574,6 +574,24 @@ p.lead {
       color: white; }
       .button.secondary a:hover, button.secondary a:hover, input[type="button"].secondary a:hover, input[type="reset"].secondary a:hover, input[type="submit"].secondary a:hover {
         text-decoration: none; }
+    .button.secondary.bookmark_links, button.secondary.bookmark_links, input[type="button"].secondary.bookmark_links, input[type="reset"].secondary.bookmark_links, input[type="submit"].secondary.bookmark_links {
+      background: #e3ebee;
+      border: 1px solid #d0dee2; }
+      .button.secondary.bookmark_links:hover, button.secondary.bookmark_links:hover, input[type="button"].secondary.bookmark_links:hover, input[type="reset"].secondary.bookmark_links:hover, input[type="submit"].secondary.bookmark_links:hover {
+        background-color: #e2f4f7; }
+      .button.secondary.bookmark_links span, button.secondary.bookmark_links span, input[type="button"].secondary.bookmark_links span, input[type="reset"].secondary.bookmark_links span, input[type="submit"].secondary.bookmark_links span {
+        color: #666666; }
+      .button.secondary.bookmark_links #bookmark_image, button.secondary.bookmark_links #bookmark_image, input[type="button"].secondary.bookmark_links #bookmark_image, input[type="reset"].secondary.bookmark_links #bookmark_image, input[type="submit"].secondary.bookmark_links #bookmark_image {
+        float: left;
+        padding-top: 2px; }
+        .button.secondary.bookmark_links #bookmark_image a, button.secondary.bookmark_links #bookmark_image a, input[type="button"].secondary.bookmark_links #bookmark_image a, input[type="reset"].secondary.bookmark_links #bookmark_image a, input[type="submit"].secondary.bookmark_links #bookmark_image a {
+          margin-left: 2px;
+          margin-right: 2px;
+          padding-right: 4px; }
+      .button.secondary.bookmark_links #bookmark_link, button.secondary.bookmark_links #bookmark_link, input[type="button"].secondary.bookmark_links #bookmark_link, input[type="reset"].secondary.bookmark_links #bookmark_link, input[type="submit"].secondary.bookmark_links #bookmark_link {
+        float: left; }
+        .button.secondary.bookmark_links #bookmark_link a, button.secondary.bookmark_links #bookmark_link a, input[type="button"].secondary.bookmark_links #bookmark_link a, input[type="reset"].secondary.bookmark_links #bookmark_link a, input[type="submit"].secondary.bookmark_links #bookmark_link a {
+          color: #666666; }
   .button.tertiary, button.tertiary, input[type="button"].tertiary, input[type="reset"].tertiary, input[type="submit"].tertiary {
     background: #e3ebee;
     border: 1px solid #d0dee2; }
@@ -1058,6 +1076,23 @@ a.icon_link {
   .subsection:after {
     clear: both; }
 
+.intro, .snapshot {
+  padding: 30px 30px;
+  background: #f3f7f8;
+  -webkit-box-shadow: inset 0 -2px 2px -2px #cccccc;
+  -moz-box-shadow: inset 0 -2px 2px -2px #cccccc;
+  box-shadow: inset 0 -2px 2px -2px #cccccc;
+  behavior: url(PIE.htc);
+  -moz-border-radius: 4px 4px 0px 0px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  border-radius: 4px 4px 0px 0px;
+  behavior: url(PIE.htc); }
+  .intro h1, .intro h2, .intro h3, .intro h4, .intro .h1, .intro .h2, .intro .h3, .intro .h4, .snapshot h1, .snapshot h2, .snapshot h3, .snapshot h4, .snapshot .h1, .snapshot .h2, .snapshot .h3, .snapshot .h4 {
+    margin: 0; }
+
 .panel {
   display: table;
   margin-top: 15px;
@@ -1103,6 +1138,7 @@ hr {
   width: 100%;
   max-width: 930px;
   margin: 30px 30px 20px 30px;
+  background: url(/images/separator_pattern_blue.png) repeat; }
   hr.secondary {
     background: none;
     height: 0;
