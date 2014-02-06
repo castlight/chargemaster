@@ -6,8 +6,17 @@ $(function() {
     window.history.go(-1);
   };
 
+  var addCommas = function(n) {
+    var addCommas3 = function(s) {
+      return s.length > 3 ? (addCommas3(s.substring(0, s.length-3)) 
+                             + ',' + s.substring(s.length-3)) : s;
+    };
+
+    return (n < 10000) ? String(n) : addCommas3(String(n));
+  };
+
   var asPrice = function(p) {
-    return '$' + Math.floor(p / 100.0);
+    return '$' + addCommas(Math.floor(p / 100.0));
   };
 
   var asRatio = function(x, y) {
