@@ -34,62 +34,62 @@ $(function() {
 			   });
       var mx = (drg.us_average && drg.us_average.chargemaster) || 0;
       $.map(charges,
-	    function(charge) {
-	      if (charge.chargemaster > mx) {
-		mx = charge.chargemaster;
-	      }
-	    });
+  	    function(charge) {
+  	      if (charge.chargemaster > mx) {
+  		      mx = charge.chargemaster;
+  	      }
+  	    });
 
       var priceLine = function(name, price, clas, label) {
-	width = Math.floor(80 * price / mx) + '%';
+        width = Math.floor(80 * price / mx) + '%';
 
-	return DIV({ clas : 'price-line ' + clas },
-		   DIV({ clas : 'price-name' }, name),
-		   DIV({ clas : 'price-bar-frame' },
-		       DIV({ clas : 'price-bar',
-			     style : {
-			       width : width
-			     }
-			   },
-			   label && DIV({ clas : 'price-bar-label'}, label)),
-		       SPAN({ clas : 'price' },
-			    asPrice(price))));
-      };
+      	return DIV({ clas : 'price-line ' + clas },
+      		   DIV({ clas : 'price-name' }, name),
+      		   DIV({ clas : 'price-bar-frame' },
+      		       DIV({ clas : 'price-bar',
+      			     style : {
+      			       width : width
+      			     }
+      			   },
+      			   label && DIV({ clas : 'price-bar-label'}, label)),
+      		       SPAN({ clas : 'price' },
+      			    asPrice(price))));
+            };
 
       var computeRatio = function(x, y) {
-	return y && asRatio(x, y);
+        return y && asRatio(x, y);
       };
 
 
       var displayCharge = function(title, charge) {
-	var label = computeRatio(charge.chargemaster, charge.medicare);
-	return DIV({ clas : 'charge' },
-		   H4(title),
-		   DIV({ clas : 'price-block' },
-		       priceLine('Sticker Price', charge.chargemaster, 'chargemaster', label),
-		       priceLine('Medicare Price', charge.medicare, 'medicare')));
-      };
+        var label = computeRatio(charge.chargemaster, charge.medicare);
+        return DIV({ clas : 'charge' },
+    		   H4(title),
+    		   DIV({ clas : 'price-block' },
+    		       priceLine('Sticker Price', charge.chargemaster, 'chargemaster', label),
+    		       priceLine('Medicare Price', charge.medicare, 'medicare')));
+          };
 
       var displayHospitalCharge = function(charge) {
-	return displayCharge(Hospitals[charge.hospital].name,
-			     charge);
-      };
+      	return displayCharge(Hospitals[charge.hospital].name,
+      			     charge);
+            };
 
       $('body').empty()
-	.append(DIV(HEADER(A({ clas : 'back-button',
-			       href: '#'}).click(back),
-			   H2(city, ', ', state),
-			   H2(drg.name),
-			   A({ clas : 'help-button',
-			       href: '#page=help'})),
-		    DIV({ clas : 'charge-frame' },
-			DIV({ clas : 'charges' },
-			    drg.us_average && displayCharge('US Average', drg.us_average),
-			    $.map(charges, displayHospitalCharge))),
-		    FOOTER(A({ clas : 'unafforable',
-			       href : "#costs"}, 'Help, I cannot afford this'))));
-    }
-  };
+      	.append(DIV(HEADER(A({ clas : 'back-button',
+      			       href: '#'}).click(back),
+      			   H2(city, ', ', state),
+      			   H2(drg.name),
+      			   A({ clas : 'help-button',
+      			       href: '#page=help'})),
+      		    DIV({ clas : 'charge-frame' },
+      			DIV({ clas : 'charges' },
+      			    drg.us_average && displayCharge('US Average', drg.us_average),
+      			    $.map(charges, displayHospitalCharge))),
+      		    FOOTER(A({ clas : 'unafforable',
+      			       href : "#costs"}, 'Help, I cannot afford this'))));
+          }
+        };
 
   var renderHelp = function() {
     with ($.t) {
@@ -100,8 +100,8 @@ $(function() {
                     DIV( { style: { position: "absolute", top:px(80) } },
                          DIV(IMG({ src: "public/kidney-topimage.png", style: {display: "block",  margin: "0 auto" } }), 
                              DIV( { style: "width:85%;margin:10px;" },
-                                  P("Kidney failure, or renal failure, describes the situation when one’s kidneys are no longer able to adequately clean waste from the blood.  This can lead to a number of symptoms caused by an increase of waste in the blood, such as nausea, urination issues, swelling of the hands, feet, and face. " ), 
-                                  P("While kidney failure is usually not reversible, it is often controlled by a treatment called dialysis.  In this treatment, a special machine functions as a filter to clear wastes from the blood.  Dialysis is typically completed several times per week and lasts for several hours."), 
+                                  P("Kidney failure, or renal failure, describes a situation in which one's kidneys are no longer able to adequately clean waste from the blood. This can lead to a number of symptoms caused by an increase of waste in the blood, such as nausea, urination issues, or swelling of the hands, feet, and face." ), 
+                                  P("While kidney failure is usually not reversible, it is often controlled by a treatment called dialysis. In this treatment, a special machine functions as a filter to clear wastes from the blood. Dialysis is typically completed several times per week and lasts for several hours."), 
                                   P("In some cases, kidney transplants are available to replace a poorly functioning kidney with a healthy kidney."))))));
     }
   };
@@ -125,16 +125,16 @@ $(function() {
   	                DIV(IMG( { src: "public/help-topimage.png", style: { display: "block", margin: "0 auto"} } ),
 
                             DIV( { style: { width:"85%", margin:px(10) } },
-	                         P("If you don’t have insurance or have limited insurance, there are a couple of approaches you might consider to help you pay for your medical need."),
+	                         P("If you don't have insurance or have limited insurance, there are a couple of approaches you might consider to help you pay for your medical need."),
 	                         OL(
 		                   LI(STRONG("Evaluate the hospitals in your area for cost effectiveness"),
-                                      P("This database will allow you to search for the ‘Sticker Price (the amount a hospital charges for a specific procedure) and the average amount paid by Medicare (the amount Medicare actually writes in a check to the hospital).  Hospitals with lower charges will generally be more reasonably priced for you if you are paying on your own.")),
+                                      P("This database will allow you to search for the 'Sticker Price' (the amount a hospital charges for a specific procedure) and the average amount paid by Medicare (the amount Medicare actually reimburses the hospital). Hospitals with lower charges will generally be more reasonably priced for you if you are paying on your own.")),
 		                   LI(STRONG("Negotiate your payment in advance"),
-                                      P("Most hospitals will offer you a “Cash Pay” or “Self-pay” price when you schedule an expensive procedure.  Usually, that price is a 30% or 40% from their normally charged price.  Sounds good, right?  Nope!  The data in this application shows that the ‘Sticker Price’ is often 5 or even 10 times what Medicare pays.  So, when you negotiate, make sure you get a deal that is around or less than the Medicare paid amount.")),
-		                   LI(STRONG("Get help negotiating your hospital bill--visit Medical Billing Advocates of America:"),
+                                      P("Most hospitals will offer you a \"Cash Pay\" or \"Self-pay\" price when you schedule an expensive procedure.  Usually, that price is a 30% or 40% from their normally charged price. Sounds good, right? Nope! The data in this application shows that the 'Sticker Price' is often 5 or even 10 times what Medicare pays. So, when you negotiate, make sure you get a deal that is around or less than the Medicare paid amount.")),
+		                   LI(STRONG("Get help negotiating your hospital bill -- visit Medical Billing Advocates of America:"),
 			              UL({ "class": "disc" },
-			                  LI("Go to", A({ href: "http://www.billadvocates.com"},"http://www.billadvocates.com")),
-			                  LI("Click on “Find a Medical Bill Advocate” and fill out your information"),
+			                  LI("Go to ", A({ href: "http://www.billadvocates.com"},"http://www.billadvocates.com")),
+			                  LI("Click on \"Find a Medical Bill Advocate\" and fill out your information"),
 			                  LI("Someone will get back to you with suggestions on advocates in your area")))))))));
     }
   };
@@ -149,7 +149,6 @@ $(function() {
     };
   };
 
-
   var populateState = function($state) {
     $state.append($.map($.unique($.map(Hospitals, function(h) { return h.state; } ).sort()).sort(),
            function(state) {
@@ -158,7 +157,6 @@ $(function() {
   };
   
   var populateCity = function($city, state) {
-    
     $city.empty()
       .append($.map($.unique($.map($.grep($.map(Hospitals, function(h) { return h; } ), 
                                           function(h) {
