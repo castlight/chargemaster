@@ -173,7 +173,7 @@ $(function() {
         .append(DIV(DIV({ "class": "row", style: { background:"url(public/home-topimage.png)",  width: "99%", height: px(213)}},
                         P({ "class": "strong", style: { padding: "60px 0 0 10px"}}, "What does your hospital charge?"), 
                         FORM($city, $state)), 
-                    $drgs = DIV({ "data-accordion":"", "class": "castlight_accordion", style : { margin : "0 10px" } } )));
+                    $drgs = DIV({ "data-accordion":"", "class": "cl_accordion", style : { margin : "0 10px" } } )));
 
       populateState($state);
       populateCity($city, lastState);
