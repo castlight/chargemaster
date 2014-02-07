@@ -86,7 +86,7 @@ $(function() {
       			DIV({ clas : 'charges' },
       			    drg.us_average && displayCharge('US Average', drg.us_average),
       			    $.map(charges, displayHospitalCharge))),
-      		    FOOTER(A({ clas : 'unafforable',
+      		    FOOTER(A({ clas : 'unaffordable',
       			       href : "#costs"}, 'Help, I cannot afford this'))));
           }
         };
@@ -98,7 +98,8 @@ $(function() {
         .append(DIV(HEADER(A({ "class": "back-button", href: "#" }).click(back),
                            H2("Renal Failure")),
                     DIV( { style: { position: "absolute", top:px(80) } },
-                         DIV(IMG({ src: "public/kidney-topimage.png", style: {display: "block",  margin: "0 auto" } }), 
+                         DIV({ style : { margin : "0 20px" }},
+                             IMG({ src: "public/kidney-topimage.png", style: {display: "block",  margin: "0 auto" } }), 
                              DIV( { style: "width:85%;margin:10px;" },
                                   P("Kidney failure, or renal failure, describes a situation in which one's kidneys are no longer able to adequately clean waste from the blood. This can lead to a number of symptoms caused by an increase of waste in the blood, such as nausea, urination issues, or swelling of the hands, feet, and face." ), 
                                   P("While kidney failure is usually not reversible, it is often controlled by a treatment called dialysis. In this treatment, a special machine functions as a filter to clear wastes from the blood. Dialysis is typically completed several times per week and lasts for several hours."), 
@@ -176,7 +177,7 @@ $(function() {
 
   var renderHome = function() {
     with ($.t) {
-      var $drgs, $city = SELECT(), $state = SELECT({ style : { width : px(60)}});
+      var $drgs, $city = SELECT({ style : { margin : "0 5px 0 10px"}}), $state = SELECT({ style : { width : px(60), margin : "0 5px 0 5px"}});
       $('body')
         .empty()
         .append(DIV(DIV({ "class": "row", style: { background:"url(public/home-topimage.png)",  width: "99%", height: px(213)}},
