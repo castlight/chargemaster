@@ -32,4 +32,4 @@ And then go to http://localhost:3456/ on your browser.
 
 Copyright (c) 2013-2014 Castlight Health. See the LICENSE file for license rights and limitations.
 
-This project uses [jQuery](https://jquery.org/), [jHash](https://jhash.codeplex.com/) and the Treena framework.
+This project uses [jQuery](https://jquery.org/), [jHash](https://jhash.codeplex.com/) and the Treena framework, all of which are released under the [MIT license](http://opensource.org/licenses/MIT).
