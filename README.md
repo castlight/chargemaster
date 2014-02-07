@@ -14,7 +14,7 @@ Wikipedia describes Chargemaster as:
     described as "the central mechanism of the revenue cycle" of a
     hospital.
 
-This program displays the Chargemaster rate and the Medicare reimbursement rate for 100 common inpatient and 30 common outpatient procedures at hospitals around the US. It is based on the [Chargemaster data released by CMS](http://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/index.html) in 2013.
+This program displays the Chargemaster rate and the Medicare reimbursement rate for 100 common inpatient and 30 common outpatient procedures at hospitals around the US. It is based on the [Chargemaster and Medicare FY 2011 data released by CMS](http://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/index.html) in 2013.
 
 ## License
 
