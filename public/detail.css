@@ -81,11 +81,11 @@ header h2 {
     height: 30px;
 }
 
-.unafforable:visited {
+.unaffordable:visited {
     color: white;
 }
 
-.unafforable {
+.unaffordable {
     background-color: #7d9a6e;
     color: white;
     display: block;
