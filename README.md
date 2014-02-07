@@ -16,14 +16,10 @@ Wikipedia describes Chargemaster as:
 
 This program displays the Chargemaster rate and the Medicare reimbursement rate for 100 common inpatient and 30 common outpatient procedures at hospitals around the US. It is based on the [Chargemaster and Medicare FY 2011 data released by CMS](http://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/index.html) in 2013.
 
-## License
-
-Copyright (c) 2013-2014 Castlight Health. See the LICENSE file for license rights and
-limitations (all rights reserved for now, but soon to be open sourced).
-
+## Getting Started
 The active elements of this program operate entirely on the browser. The files can be served from any HTTP or HTTPS server, including a CDN like Amazon's CloudFront.  
 
-You can even serve it directly from the file system by simply opening the index file, with File -> Open, on your Firefox browser. This method will not work for Chrome, unfortunately; Chrome's security model does not allow the program to open the necessary local data-files with AJAX.
+You can even serve it directly from the file system by simply opening the index file, with File -> Open, on your Firefox browser. This method will not work for Chrome, unfortunately; Chrome's security model does not allow the program to open the necessary local datafiles with AJAX.
 
 If you want to run it locally using a real HTTP server, you can use Python's SimpleHTTPServer:
 
@@ -32,3 +28,8 @@ If you want to run it locally using a real HTTP server, you can use Python's Sim
 
 And then go to http://localhost:3456/ on your browser.
 
+## License
+
+Copyright (c) 2013-2014 Castlight Health. See the LICENSE file for license rights and limitations.
+
+This project uses [jQuery](https://jquery.org/), [jHash](https://jhash.codeplex.com/) and the Treena framework.
