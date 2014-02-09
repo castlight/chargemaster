@@ -99,7 +99,7 @@ $(function() {
                            H2("Renal Failure")),
                     DIV( { style: { position: "absolute", top:px(80) } },
                          DIV({ style : { margin : "0 20px" }},
-                             IMG({ src: "public/kidney-topimage.png", style: {display: "block",  margin: "0 auto" } }), 
+                             IMG({ src: "public/diagnosis-help-topimage.png", style: {display: "block",  margin: "0 auto" } }), 
                              DIV( { style: "width:85%;margin:10px;" },
                                   P("Kidney failure, or renal failure, describes a situation in which one's kidneys are no longer able to adequately clean waste from the blood. This can lead to a number of symptoms caused by an increase of waste in the blood, such as nausea, urination issues, or swelling of the hands, feet, and face." ), 
                                   P("While kidney failure is usually not reversible, it is often controlled by a treatment called dialysis. In this treatment, a special machine functions as a filter to clear wastes from the blood. Dialysis is typically completed several times per week and lasts for several hours."), 
@@ -123,7 +123,7 @@ $(function() {
         .append(DIV(HEADER(A({ "class": "back-button", href: "#"}).click(back),
                            H2("How to help lower your costs")),
                     DIV({ style: { position: "absolute", top:px(80), overflow:"auto" }},
-  	                DIV(IMG( { src: "public/help-topimage.png", style: { display: "block", margin: "0 auto"} } ),
+  	                DIV(IMG( { src: "public/help-costsavings-topimage.png", style: { display: "block", margin: "0 auto"} } ),
 
                             DIV( { style: { width:"85%", margin:px(10) } },
 	                         P("If you don't have insurance or have limited insurance, there are a couple of approaches you might consider to help you pay for your medical need."),
@@ -131,7 +131,7 @@ $(function() {
 		                   LI(STRONG("Evaluate the hospitals in your area for cost effectiveness"),
                                       P("This database will allow you to search for the 'Sticker Price' (the amount a hospital charges for a specific procedure) and the average amount paid by Medicare (the amount Medicare actually reimburses the hospital). Hospitals with lower charges will generally be more reasonably priced for you if you are paying on your own.")),
 		                   LI(STRONG("Negotiate your payment in advance"),
-                                      P("Most hospitals will offer you a \"Cash Pay\" or \"Self-pay\" price when you schedule an expensive procedure.  Usually, that price is a 30% or 40% from their normally charged price. Sounds good, right? Nope! The data in this application shows that the 'Sticker Price' is often 5 or even 10 times what Medicare pays. So, when you negotiate, make sure you get a deal that is around or less than the Medicare paid amount.")),
+                                      P("Many hospitals will offer you a \"Cash Pay\" or \"Self-pay\" price when you schedule an expensive procedure. Often, that price is a 30-40% discount from their normally charged price. Sounds good, right? Nope! The data in this application shows that the 'Sticker Price' is often five, or even more than ten, times what Medicare pays.")),
 		                   LI(STRONG("Get help negotiating your hospital bill -- visit Medical Billing Advocates of America:"),
 			              UL({ "class": "disc" },
 			                  LI("Go to ", A({ href: "http://www.billadvocates.com"},"http://www.billadvocates.com")),
@@ -180,8 +180,8 @@ $(function() {
       var $drgs, $city = SELECT({ style : { margin : "0 5px 0 10px"}}), $state = SELECT({ style : { width : px(60), margin : "0 5px 0 5px"}});
       $('body')
         .empty()
-        .append(DIV(DIV({ "class": "row", style: { background:"url(public/home-topimage.png)",  width: "99%", height: px(213)}},
-                        P({ "class": "strong", style: { padding: "60px 0 0 10px"}}, "What does your hospital charge?"), 
+        .append(DIV(DIV({ "class": "row", style: { background:"url(public/home-topimage.png)",  width: "99%", height: px(160)}},
+                        P({ "class": "strong", style: { padding: "10px 0 0 10px"}}, "What does your hospital charge?"), 
                         FORM($city, $state)), 
                     $drgs = DIV({ "data-accordion":"", "class": "cl_accordion", style : { margin : "0 10px" } } )));
 
