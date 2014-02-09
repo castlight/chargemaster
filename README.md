@@ -33,3 +33,11 @@ And then go to http://localhost:3456/ on your browser.
 Copyright (c) 2013-2014 Castlight Health. See the LICENSE file for license rights and limitations.
 
 This project uses [jQuery](https://jquery.org/), [jHash](https://jhash.codeplex.com/) and the Treena framework, all of which are released under the [MIT license](http://opensource.org/licenses/MIT).
+
+### Images
+####Home Page
+https://secure.flickr.com/photos/usnavy/5568438576/ - [CC Attribution 2.0 Generic](https://creativecommons.org/licenses/by/2.0/deed.en)
+####Cost Savings Help Page
+image is public domain
+####Diagnosis Help Page
+image is public domain
