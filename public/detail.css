@@ -53,6 +53,7 @@ header h2 {
 .price {
     float: right;
     display: inline-block;
+    font-size: 24px;
 }
 
 .price-line {
@@ -66,7 +67,7 @@ header h2 {
     text-align: center;
     padding-top: 3px;
     color: white;
-    font-size: 12px;
+    font-size: 24px;
     font-weight: bold;
 }
 .medicare .price-bar {
@@ -81,6 +82,10 @@ header h2 {
     height: 30px;
 }
 
+.price-bar-label {
+  font-size: 24px;
+}
+
 .unaffordable:visited {
     color: white;
 }
@@ -93,6 +98,12 @@ header h2 {
     margin: 8px;
     padding-top: 6px;
     text-align: center;
+    font-size: 24px;
+}
+
+.diagnosis-help {
+    width: 85%;
+    margin: 10px;
 }
 
 .back-button {

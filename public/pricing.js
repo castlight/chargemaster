@@ -97,10 +97,10 @@ $(function() {
         .empty()
         .append(DIV(HEADER(A({ "class": "back-button", href: "#" }).click(back),
                            H2("Renal Failure")),
-                    DIV( { style: { position: "absolute", top:px(80) } },
+                    DIV( { style: { position: "absolute", top:px(80), overflow:"auto" } },
                          DIV({ style : { margin : "0 20px" }},
                              IMG({ src: "public/diagnosis-help-topimage.png", style: {display: "block",  margin: "0 auto" } }), 
-                             DIV( { style: "width:85%;margin:10px;" },
+                             DIV({ clas : 'diagnosis-help' },
                                   P("Kidney failure, or renal failure, describes a situation in which one's kidneys are no longer able to adequately clean waste from the blood. This can lead to a number of symptoms caused by an increase of waste in the blood, such as nausea, urination issues, or swelling of the hands, feet, and face." ), 
                                   P("While kidney failure is usually not reversible, it is often controlled by a treatment called dialysis. In this treatment, a special machine functions as a filter to clear wastes from the blood. Dialysis is typically completed several times per week and lasts for several hours."), 
                                   P("In some cases, kidney transplants are available to replace a poorly functioning kidney with a healthy kidney."))))));
