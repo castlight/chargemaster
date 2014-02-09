@@ -1065,7 +1065,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50008": {
-    "name": "California Pacific Medical Ctr-Davies Campus Hosp",
+    "name": "California Pacific Medical Ctr-Davies Campus Hospital",
     "city": "San Francisco",
     "state": "CA"
   },
@@ -1170,7 +1170,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50047": {
-    "name": "California Pacific Medical Ctr-Pacific Campus Hosp",
+    "name": "California Pacific Medical Ctr-Pacific Campus Hospital",
     "city": "San Francisco",
     "state": "CA"
   },
@@ -1195,7 +1195,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50058": {
-    "name": "Glendale Mem Hospital and Hlth Center",
+    "name": "Glendale Mem Hospital and Health Center",
     "city": "Glendale",
     "state": "CA"
   },
@@ -1265,12 +1265,12 @@ var Hospitals = {
     "state": "CA"
   },
   "50082": {
-    "name": "St Johns Regional Medical Center",
+    "name": "St John's Regional Medical Center",
     "city": "Oxnard",
     "state": "CA"
   },
   "50084": {
-    "name": "St Josephs Med Center of Stockton",
+    "name": "St Joseph's Med Center of Stockton",
     "city": "Stockton",
     "state": "CA"
   },
@@ -1285,7 +1285,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50091": {
-    "name": "Community and Mission  Hospital of Huntington Park",
+    "name": "Community and Mission Hospital of Huntington Park",
     "city": "Huntington Park",
     "state": "CA"
   },
@@ -1465,7 +1465,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50149": {
-    "name": "California Hospital Medical Center La",
+    "name": "California Hospital Medical Center LA",
     "city": "Los Angeles",
     "state": "CA"
   },
@@ -1480,7 +1480,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50153": {
-    "name": "O'connor Hospital",
+    "name": "O'Connor Hospital",
     "city": "San Jose",
     "state": "CA"
   },
@@ -1600,7 +1600,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50226": {
-    "name": "Ahmc Anaheim Regional Medical Center",
+    "name": "AHMC Anaheim Regional Medical Center",
     "city": "Anaheim",
     "state": "CA"
   },
@@ -1625,7 +1625,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50234": {
-    "name": "Sharp Coronado Hospital and Hlthcr Ctr",
+    "name": "Sharp Coronado Hospital and Healthcare Ctr",
     "city": "Coronado",
     "state": "CA"
   },
@@ -1640,7 +1640,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50238": {
-    "name": "Methodist Hospital of Southern Ca",
+    "name": "Methodist Hospital of Southern CA",
     "city": "Arcadia",
     "state": "CA"
   },
@@ -1775,12 +1775,12 @@ var Hospitals = {
     "state": "CA"
   },
   "50301": {
-    "name": "Ukiah Valley Medical Center/Hospital D",
+    "name": "Ukiah Valley Medical Center/Hospital",
     "city": "Ukiah",
     "state": "CA"
   },
   "50305": {
-    "name": "Alta Bates Summit Medical Center - Alta Bates Camp",
+    "name": "Alta Bates Summit Medical Center - Alta Bates Campus",
     "city": "Berkeley",
     "state": "CA"
   },
@@ -2280,7 +2280,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50616": {
-    "name": "St Johns Pleasant Valley Hospital",
+    "name": "St John's Pleasant Valley Hospital",
     "city": "Camarillo",
     "state": "CA"
   },
@@ -2350,7 +2350,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50680": {
-    "name": "Northbay Vacavalley Hospital",
+    "name": "NorthBay VacaValley Hospital",
     "city": "Vacaville",
     "state": "CA"
   },
@@ -2420,7 +2420,7 @@ var Hospitals = {
     "state": "CA"
   },
   "50717": {
-    "name": "LAC/Rancho Los Amigos National Rehabilitation  Ctr",
+    "name": "LAC/Rancho Los Amigos National RehabilitationCtr",
     "city": "Downey",
     "state": "CA"
   },
