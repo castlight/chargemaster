@@ -153,7 +153,7 @@
       },
       {
         "code": "392",
-        "name": "Esophagitis, Gastroenteritis, and other digestive disorders"
+        "name": "Esophagitis, gastroenteritis, and other digestive disorders"
       },
       {
         "code": "390",
@@ -263,6 +263,38 @@
       {
         "code": "243",
         "name": "Pacemaker implant (with complications)"
+      },
+      {
+        "code": "238",
+        "name": "Major cardiovascular procedures without major complications"
+      },
+      {
+        "code": "246",
+        "name": "Perc cardiovasc procedures with drug-eluting stent with major complications or 4+ vessels/stents"
+      },
+      {
+        "code": "247",
+        "name": "Perc cardiovasc procedures with drug-eluting stent without major complications"
+      },
+      {
+        "code": "249",
+        "name": "Perc cardiovasc procedures with non-drug-eluting stent without major complications"
+      },
+      {
+        "code": "251",
+        "name": "Perc cardiovasc procedures without coronary artery stent without major complications"
+      },
+      {
+        "code": "252",
+        "name": "Other vascular procedures with major complications"
+      },
+      {
+        "code": "253",
+        "name": "Other vascular procedures with complications"
+      },
+      {
+        "code": "254",
+        "name": "Other vascular procedures"
       }
     ]
   },
@@ -370,6 +402,14 @@
       {
         "code": "191",
         "name": "COPD (with complications)"
+      },
+      {
+        "code": "207",
+        "name": "Respiratory system diagnosis with ventilator support 96+ Hours"
+      },
+      {
+        "code": "208",
+        "name": "Respiratory system diagnosis with ventilator support <96 Hours"
       }
     ]
   },
