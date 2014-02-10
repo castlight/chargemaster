@@ -150,8 +150,26 @@ $(function() {
     };
   };
 
+  // Enhance Array to uniqify arrays of string, since $.unique() doesn't do that
+  Array.prototype.contains = function(v) {
+      for(var i = 0; i < this.length; i++) {
+          if(this[i] === v) return true;
+      }
+      return false;
+  };
+
+  Array.prototype.unique = function() {
+      var arr = [];
+      for(var i = 0; i < this.length; i++) {
+          if(!arr.contains(this[i])) {
+              arr.push(this[i]);
+          }
+      }
+      return arr; 
+  }
+
   var populateState = function($state) {
-    $state.append($.map($.unique($.map(Hospitals, function(h) { return h.state; } ).sort()).sort(),
+    $state.append($.map($.map(Hospitals, function(h) { return h.state; }).unique().sort(),
            function(state) {
              return $.t.OPTION({ value : state }, state);
            }));
@@ -159,13 +177,13 @@ $(function() {
   
   var populateCity = function($city, state) {
     $city.empty()
-      .append($.map($.unique($.map($.grep($.map(Hospitals, function(h) { return h; } ), 
+      .append($.map($.map($.grep($.map(Hospitals, function(h) { return h; } ), 
                                           function(h) {
                                             return h.state === state
                                           }),
                                    function(h) {
                                      return h.city;
-                                   }).sort()).sort(),
+                                   }).unique().sort(),
                     function(city) {
                       return $.t.OPTION({ value : city }, city);
                     }));
