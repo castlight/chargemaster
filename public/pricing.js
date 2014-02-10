@@ -100,7 +100,7 @@ $(function() {
                     DIV( { style: { position: "absolute", top:px(80), overflow:"auto" } },
                          DIV({ style : { margin : "0 20px" }},
                              IMG({ src: "public/diagnosis-help-topimage.png", style: {display: "block",  margin: "0 auto" } }), 
-                             DIV({ clas : 'diagnosis-help' },
+                             DIV( { clas : 'diagnosis-help' },
                                   P("Kidney failure, or renal failure, describes a situation in which one's kidneys are no longer able to adequately clean waste from the blood. This can lead to a number of symptoms caused by an increase of waste in the blood, such as nausea, urination issues, or swelling of the hands, feet, and face." ), 
                                   P("While kidney failure is usually not reversible, it is often controlled by a treatment called dialysis. In this treatment, a special machine functions as a filter to clear wastes from the blood. Dialysis is typically completed several times per week and lasts for several hours."), 
                                   P("In some cases, kidney transplants are available to replace a poorly functioning kidney with a healthy kidney."))))));
@@ -150,26 +150,8 @@ $(function() {
     };
   };
 
-  // Enhance Array to uniqify arrays of string, since $.unique() doesn't do that
-  Array.prototype.contains = function(v) {
-      for(var i = 0; i < this.length; i++) {
-          if(this[i] === v) return true;
-      }
-      return false;
-  };
-
-  Array.prototype.unique = function() {
-      var arr = [];
-      for(var i = 0; i < this.length; i++) {
-          if(!arr.contains(this[i])) {
-              arr.push(this[i]);
-          }
-      }
-      return arr; 
-  }
-
   var populateState = function($state) {
-    $state.append($.map($.map(Hospitals, function(h) { return h.state; }).unique().sort(),
+    $state.append($.map($.unique($.map(Hospitals, function(h) { return h.state; } ).sort()).sort(),
            function(state) {
              return $.t.OPTION({ value : state }, state);
            }));
@@ -177,13 +159,13 @@ $(function() {
   
   var populateCity = function($city, state) {
     $city.empty()
-      .append($.map($.map($.grep($.map(Hospitals, function(h) { return h; } ), 
+      .append($.map($.unique($.map($.grep($.map(Hospitals, function(h) { return h; } ), 
                                           function(h) {
                                             return h.state === state
                                           }),
                                    function(h) {
                                      return h.city;
-                                   }).unique().sort(),
+                                   }).sort()).sort(),
                     function(city) {
                       return $.t.OPTION({ value : city }, city);
                     }));
