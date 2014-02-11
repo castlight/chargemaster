@@ -1,7 +1,6 @@
 # Chargemaster
 
-The Chargemaster application was created at Castlight Hackday 01 in May 2013.
-
+The Chargemaster application was created at Castlight Hackday 01 in May 2013 by Rina Horiuchi, David Kellerman, Michael Lorton, Ankur Jain, Will Bondurant and Irina Issakova.
 
 Wikipedia describes Chargemaster as:
 
