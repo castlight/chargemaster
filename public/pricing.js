@@ -150,8 +150,14 @@ $(function() {
     };
   };
 
+  var uniqueList = function(lst) {
+    return $.grep(lst, function(x, i) {
+      return !i || (x !== lst[i-1]);
+    });
+  };
+
   var populateState = function($state) {
-    $state.append($.map($.unique($.map(Hospitals, function(h) { return h.state; } ).sort()).sort(),
+    $state.append($.map(uniqueList($.map(Hospitals, function(h) { return h.state; } ).sort()),
            function(state) {
              return $.t.OPTION({ value : state }, state);
            }));
@@ -159,13 +165,13 @@ $(function() {
   
   var populateCity = function($city, state) {
     $city.empty()
-      .append($.map($.unique($.map($.grep($.map(Hospitals, function(h) { return h; } ), 
+      .append($.map(uniqueList($.map($.grep($.map(Hospitals, function(h) { return h; } ), 
                                           function(h) {
                                             return h.state === state
                                           }),
                                    function(h) {
                                      return h.city;
-                                   }).sort()).sort(),
+                                   }).sort()),
                     function(city) {
                       return $.t.OPTION({ value : city }, city);
                     }));
