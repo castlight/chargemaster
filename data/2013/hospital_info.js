@@ -1,4 +1,4 @@
-var hospitals = {
+var Hospitals = {
   "10039": {
     "city": "Huntsville",
     "name": "Huntsville Hospital",
