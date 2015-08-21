@@ -7,9 +7,10 @@
   </header>
   <div class="charge-frame">
     <div class="charges">
-      <div ng-repeat="charge in cc.charges" 
+      <div ng-repeat="charge in cc.charges"
         charge-block="charge" charge-block-max="cc.max"
         ></div>
+      <div ng-hide="cc.charges.length">Sorry, we have no providers of this service in this city.</div>
     </div>
   </div>
   <footer><a class="unaffordable" ui-sref="costs({state: cc.state, city: cc.city, code: cc.code})">Help, I cannot afford this</a></footer>
