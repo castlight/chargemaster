@@ -1519,6 +1519,20 @@ fieldset select:last-of-type {
     transform-origin:top right;
 }
 
+@keyframes fly-in-from-left {
+    from {
+        transform:translateY(15rem) rotate(15deg);
+        opacity:0;
+    }
+}
+
+@keyframes fly-in-from-right {
+    from {
+        transform:translateY(15rem) rotate(-15deg);
+        opacity:0;
+    }
+}
+
 .seciont_header {
     padding: 5px 5px 25px;
     background: rgb(238, 228, 212);
@@ -1548,20 +1562,6 @@ fieldset {
     user-select:none;
 }
 
-@keyframes fly-in-from-left {
-    from {
-        transform:translateY(15rem) rotate(15deg);
-        opacity:0;
-    }
-}
-
-@keyframes fly-in-from-right {
-    from {
-        transform:translateY(15rem) rotate(-15deg);
-        opacity:0;
-    }
-}
-
 .section:after {
     position:absolute;
     font-size:.9rem;
@@ -1578,6 +1578,22 @@ fieldset {
 }
 
 .panel-body {
-  border: 0px !important;
-  padding: 0px;
+    border: 0px !important;
+    padding: 0px;
+}
+
+.collapse.in {
+    opacity: 0;
+    -webkit-animation: display-none-transition 2.5s ease both;
+    animation: display-none-transition 2.5s ease both;
+}
+
+@keyframes display-none-transition {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
