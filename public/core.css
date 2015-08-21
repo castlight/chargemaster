@@ -1499,16 +1499,24 @@ table.no_indent th, table.no_indent td {
     text-align: center;
 }
 
-form select:first-of-type {
+fieldset select:first-of-type {
     margin: 0px 5px 0px 10px;
 }
 
-form select:last-of-type {
+fieldset select:last-of-type {
     width: 60px; margin: 0px 5px;
 }
 
 .cl_accordion {
     margin: 0px 10px;
+    animation:fly-in-from-left .8s .4s ease both;
+    transform-origin:top left;
+}
+
+.cl_accordion:nth-of-type(odd) {
+    animation-name:fly-in-from-right;
+    animation-delay:0.5s;
+    transform-origin:top right;
 }
 
 .seciont_header {
@@ -1518,6 +1526,7 @@ form select:last-of-type {
 
 .section_body {
     padding: 10px;
+    margin-top: 10px;
     border-radius: 5px;
 }
 
@@ -1537,14 +1546,6 @@ fieldset {
     margin:1rem 1rem 1rem 1rem;
     border-radius:3px;
     user-select:none;
-    animation:fly-in-from-left .8s .4s ease both;
-    transform-origin:top left;
-}
-
-.section:nth-child(even){
-    animation-name:fly-in-from-right;
-    animation-delay:0.5s;
-    transform-origin:top right;
 }
 
 @keyframes fly-in-from-left {
