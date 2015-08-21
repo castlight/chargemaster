@@ -1589,8 +1589,8 @@ fieldset {
 
 .collapse.in {
     opacity: 0;
-    -webkit-animation: display-none-transition 2.5s ease both;
-    animation: display-none-transition 2.5s ease both;
+    -webkit-animation: display-none-transition 1s ease both;
+    animation: display-none-transition 1s ease both;
 }
 
 @keyframes display-none-transition {
