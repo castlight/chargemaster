@@ -1,9 +1,9 @@
 (function() {
   function configure($urlRouterProvider, $stateProvider) {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/home//');
     $stateProvider
       .state('home',
-        {url: '/home',
+        {url: '/home/:state/:city',
         templateUrl: 'app/home.html',
         controller: 'home',
         controllerAs: 'hc'})
@@ -39,7 +39,7 @@
       cc.help.text = $sce.trustAsHtml(cc.help.text);
     })
   }
-  function homeController($scope) {
+  function homeController($scope, $stateParams) {
     var hc = this;
     var populateCity = function() {
       var cities = {};
@@ -58,12 +58,17 @@
     };
     $scope.cities = populateCity();
     $scope.states = Object.keys($scope.cities).sort();
-    hc.selectedState = 'CA';
-    $scope.$watch('hc.selectedCity', function(c) {
-      if (!c && hc.selectedState) {
-        hc.selectedCity = $scope.cities[hc.selectedState][0];
+    hc.selectedState = $stateParams.state || 'CA';
+    hc.selectedCity = $stateParams.city;
+    var isCityInState = function() {
+      if (hc.selectedState && $scope.cities) {
+         if (!hc.selectedCity || ($scope.cities[hc.selectedState].indexOf(hc.selectedCity) === -1)) {
+           hc.selectedCity = $scope.cities[hc.selectedState][0];
+         }
       }
-    })
+    }
+    $scope.$watch('hc.selectedCity', isCityInState);
+    $scope.$watch('hc.selectedState', isCityInState);
     hc.diagnosisFamilies = diagnosisFamilies;
   }
 
@@ -76,7 +81,7 @@
     })
     return rv;
   }
-  
+
   function codeController($stateParams, codeService) {
     var cc = this;
     cc.hospitals = Hospitals;
