@@ -1434,7 +1434,6 @@ table.no_indent th, table.no_indent td {
           background-position: -300px -400px;
           height: 10px; }
   .cl_accordion .section .section_body {
-    display: none;
     padding: 20px;
     min-width: 90%;
     min-height: 40px;
@@ -1487,3 +1486,133 @@ table.no_indent th, table.no_indent td {
       margin-bottom: 0; }
     .alert .alert_block p + p {
       margin-top: 5px; }
+
+/* hack day 09 */
+.row {
+    width: 99%;
+    height: 160px;
+    background: url(/public/home-topimage.png);
+}
+
+.strong {
+    padding: 10px 0px 0px 10px;
+    text-align: center;
+}
+
+fieldset select:first-of-type {
+    margin: 0px 5px 0px 10px;
+}
+
+fieldset select:last-of-type {
+    width: 60px; margin: 0px 5px;
+}
+
+.cl_accordion {
+    margin: 0px 10px;
+    animation:fly-in-from-left .8s .4s ease both;
+    transform-origin:top left;
+}
+
+.cl_accordion:nth-of-type(odd) {
+    animation-name:fly-in-from-right;
+    animation-delay:0.5s;
+    transform-origin:top right;
+}
+
+@keyframes fly-in-from-left {
+    from {
+        transform:translateY(15rem) rotate(15deg);
+        opacity:0;
+    }
+}
+
+@keyframes fly-in-from-right {
+    from {
+        transform:translateY(15rem) rotate(-15deg);
+        opacity:0;
+    }
+}
+
+.seciont_header {
+    padding: 5px 5px 25px;
+    background: rgb(238, 228, 212);
+}
+
+.section_body {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.section_body h3 a {
+    color: rgb(18, 119, 142);
+}
+
+fieldset {
+    text-align: center;
+}
+
+.section {
+    padding:0.5rem;
+    box-shadow:0 1px 2px #aaa;
+    background:white;
+    width: 97%;
+    margin:1rem 1rem 1rem 1rem;
+    border-radius:3px;
+    user-select:none;
+}
+
+.section:after {
+    position:absolute;
+    font-size:.9rem;
+    top:1.5rem;
+    right:1rem;
+    content:"i";
+    border:thin solid gray;
+    color:gray;
+    width:1rem;
+    line-height:1rem;
+    text-align:center;
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.panel-body {
+    border: 0px !important;
+    padding: 0px;
+}
+
+.panel-default:hover {
+    -webkit-animation: transform-transition 0.5s ease both;
+    animation: transform-transition 0.5s ease both;
+}
+
+.collapse.in {
+    opacity: 0;
+    -webkit-animation: display-none-transition 2.5s ease both;
+    animation: display-none-transition 2.5s ease both;
+}
+
+@keyframes display-none-transition {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes transform-transition {
+  from {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  to {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+  }
+}
