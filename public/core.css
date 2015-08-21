@@ -1582,6 +1582,11 @@ fieldset {
     padding: 0px;
 }
 
+.panel-default:hover {
+    -webkit-animation: transform-transition 0.5s ease both;
+    animation: transform-transition 0.5s ease both;
+}
+
 .collapse.in {
     opacity: 0;
     -webkit-animation: display-none-transition 2.5s ease both;
@@ -1596,4 +1601,18 @@ fieldset {
     to {
         opacity: 1;
     }
+}
+
+@keyframes transform-transition {
+  from {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  to {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+  }
 }
