@@ -1,0 +1,21 @@
+<div class="charge">
+  <h4>{{cc.title}}</h4>
+  <div class="price-block">
+    <div class="price-line chargemaster">
+      <div class="price-name">Sticker Price</div>
+      <div class="price-bar-frame">
+        <div class="price-bar" ng-style="{width: cc.stickerWidth}">
+          <div class="price-bar-label">{{cc.ratio | number:1}}x</div>
+        </div>
+        <span class="price">{{cc.stickerPrice | currency}}</span>
+      </div>
+    </div>
+    <div class="price-line medicare">
+      <div class="price-name">Medicare Price</div>
+      <div class="price-bar-frame">
+        <div class="price-bar" ng-style="{width: cc.medicareWidth}"></div>
+        <span class="price">{{cc.medicarePrice | currency}}</span>
+      </div>
+    </div>
+  </div>
+</div>

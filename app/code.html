@@ -1,0 +1,16 @@
+<div>
+  <header>
+    <a class="back-button" ui-sref="home"></a>
+    <h2>{{cc.city}}, {{cc.state}}</h2>
+    <h2>{{cc.drg.name}}</h2>
+    <a class="help-button" ui-sref="help"></a>
+  </header>
+  <div class="charge-frame">
+    <div class="charges">
+      <div ng-repeat="charge in cc.charges" 
+        charge-block="charge"
+        ></div>
+    </div>
+  </div>
+  <footer><a class="unaffordable" href="#costs">Help, I cannot afford this</a></footer>
+</div>

@@ -1,0 +1,101 @@
+1 - Headache
+101 - Seizure
+149 - Dizziness
+176 - Pulmonary embolism
+177 - Respiratory infection (with major complications
+178 - Respiratory infection (with complications)
+189 - Respiratory failure
+190 - COPD (with major complications)
+191 - COPD (with complications)
+192 - COPD
+193 - Pneumonia (with major complications)
+194 - Pneumonia (with complications)
+195 - Pneumonia
+202 - Bronchitis/Asthma (with complications)
+203 - Bronchitis/Asthma
+207 - Respiratory system diagnosis with ventilator support 96+ hours
+208 - Respiratory system diagnosis with ventilator support <96 hours
+238 - Major cardiovascular procedures without major complications
+243 - Pacemaker implant (with complications)
+244 - Pacemaker Implant
+246 - Perc cardiovasc procedures with drug-eluting stent with major complications or 4+ vessels/stents
+247 - Perc cardiovasc procedures with drug-eluting stent without major complications
+249 - Perc cardiovasc procedures with non-drug-eluting stent without major complications
+251 - Perc cardiovasc procedures without coronary artery stent without major complications
+252 - Other vascular procedures with major complications
+253 - Other vascular procedures with complications
+254 - Other vascular procedures
+280 - Heart Attack (with major complications)
+281 - Heart attack (with complications)
+282 - Heart attack
+286 - Other heart conditions (with major complications)
+287 - Other heart conditions
+291 - Heart failure (with major complications)
+292 - Heart failure (with complications)
+293 - Heart failure
+300 - Peripheral vascular disease (with complications)
+301 - Peripheral vascular disease
+303 - Atherosclerosis
+305 - Hypertension
+308 - Arrhythmia (with major complications)
+309 - Arrhythmia (with complications)
+310 - Arrhythmia
+312 - Syncope
+313 - Chest Pain
+314 - Other circulatory diagnoses (with major complications)
+315 - Other circulatory diagnoses (with complications)
+329 - Major small & large bowel procedures (with major complications)
+330 - Major small & large bowel procedures (with complications)
+372 - Major gastrointestinal disorders (with complications)
+377 - Gastrointestinal bleeding (with major complications)
+378 - Gastrointestinal bleeding (with complications)
+379 - Gastrointestinal bleeding
+389 - Intestinal obstruction (with complications)
+39 - Extracranial procedures
+390 - Intestinal obstruction
+391 - Esophagitis, gastroenteritis, and other digestive disorders (with major complications)
+392 - Esophagitis, gastroenteritis, and other digestive disorders
+394 - Other digestive system diagnoses
+418 - Removal of the gall bladder (with complications)
+419 - Removal of the gall bladder
+439 - Pancreatic disorders
+460 - Spinal fusion
+469 - Joint replacement (with major complications)
+470 - Joint replacement
+473 - Cervical spinal fusion
+480 - Hip & femur procedures (with major complications)
+481 - Hip & femur procedures (with complications)
+482 - Hip & femur procedures
+491 - Back & neck procedures
+536 - Hip fracture
+552 - Back pain
+563 - Other joint injuries
+57 - Degenerative nervous system disorders
+602 - Cellulitis (with major complications)
+603 - Cellulitis
+638 - Diabetes (with complications)
+64 - Stroke (with major complications)
+640 - Other nutritional conditions (with major complications)
+641 - Other nutritional conditions
+65 - Stroke (with complications)
+66 - Stroke
+682 - Kidney failure (with major complications)
+683 - Kidney failure (with complications)
+684 - Kidney failure
+689 - Urinary Tract Infection (with major complications)
+69 - Ischemia
+690 - Urinary Tract Infection
+698 - Other diagnoses (with major complications)
+699 - Other diagnoses (with complications)
+74 - Cranial & peripheral nerve disorders
+811 - Blood disorder (with major complications)
+812 - Blood disorder
+853 - Parasitic Disease
+870 - Sepsis (with mechanical ventilation)
+871 - Sepsis (with major complications)
+872 - Sepsis
+885 - Psychosis
+897 - Substance Abuse
+917 - Poisoning (with major complications)
+918 - Poisoning
+948 - Pain control and abnormal findings
