@@ -1,8 +1,6 @@
 <div id="body_container">
   <div class="row">
     <p class="strong">What does your hospital change?</p>
-    home
-    <a ui-sref="code">code</a>
 
     <fieldset>
       <select ng-model="hc.selectedCity"
@@ -17,16 +15,18 @@
 
   <div class="cl_accordion panel-group" id="accordion" ng-repeat="diagnosisFamily in hc.diagnosisFamilies">
     <div class="section panel panel-default">
-      <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}">
+      <a ng-click="hc.currentOpen = $index">
         <span class="section_header panel-heading" style="padding: 5px 5px 25px; ">
           <span class="accordion_title_left panel-title">{{diagnosisFamily.name}}</span>
         </span>
        </a>
 
-       <div class="section_body panel-collapse collapse in" id="collapse{{$index}}" style="padding: 10px;">
+       <div class="section_body panel-collapse collapse" ng-class="{ 'in': $index == hc.currentOpen }" style="padding: 10px;">
         <div class="panel-body" ng-repeat="drg in diagnosisFamily.DRGs">
           <h3>
-            <a ui-sref="code({ code:drg.code, city: hc.selectedCity, state: hc.selectedState })">{{drg.name}}</a>
+            <a rel="detail" ui-sref="code({ code:drg.code, city: hc.selectedCity, state: hc.selectedState })" style="color: rgb(18, 119, 142);">
+              {{drg.name}}
+            </a>
           </h3>
         </div>
       </div>
