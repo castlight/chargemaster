@@ -70,6 +70,10 @@
     $scope.$watch('hc.selectedCity', isCityInState);
     $scope.$watch('hc.selectedState', isCityInState);
     hc.diagnosisFamilies = diagnosisFamilies;
+
+    hc.toggleOpen = function(i) {
+      hc.currentOpen = (hc.currentOpen === i)?-1:i;
+    }
   }
 
   function grep(a, f) {
