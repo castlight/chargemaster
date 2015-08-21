@@ -13,17 +13,32 @@
         controller: 'code',
         controllerAs: 'cc'})
       .state('help',
-        {url: '/help',
+        {url: '/help/:code/:state/:city',
         templateUrl: 'app/help.html',
         controller: 'help',
-        controllerAs: 'hc'})
+        controllerAs: 'helpc'})
       .state('costs',
-        {url: '/costs',
+        {url: '/costs/:code/:state/:city',
         templateUrl: 'app/costs.html',
-        controller: 'costs',
-        controllerAs: 'cc'})
+        controller: 'generic',
+        controllerAs: 'costsc'})
   }
-  function nothing() {};
+  function generic($stateParams) {
+    var cc = this;
+    cc.code = $stateParams.code;
+    cc.city = $stateParams.city;
+    cc.state = $stateParams.state;
+  }
+  function helpController($stateParams, $sce, helpService) {
+    var cc = this;
+    cc.code = $stateParams.code;
+    cc.city = $stateParams.city;
+    cc.state = $stateParams.state;
+    helpService.fetchHelp(cc.code).then(function(help) {
+      cc.help = help;
+      cc.help.text = $sce.trustAsHtml(cc.help.text);
+    })
+  }
   function homeController($scope) {
     var hc = this;
     var populateCity = function() {
@@ -68,6 +83,7 @@
     cc.code = $stateParams.code;
     cc.city = $stateParams.city;
     cc.state = $stateParams.state;
+    cc.max = 100000;
     codeService.fetchCode($stateParams.code)
       .then(function(drg) {
         cc.drg = drg
@@ -77,8 +93,12 @@
              return hospital && (hospital.city === $stateParams.city) &&
                  (hospital.state === $stateParams.state)
           })
+        cc.max = Number(drg.us_average.chargemaster);
         angular.forEach(cc.charges, function(charge) {
           charge.hospital = cc.hospitals[charge.hospital];
+          if (Number(charge.chargemaster) > cc.max) {
+            cc.max = Number(charge.chargemaster);
+          }
         })
       });
   }
@@ -93,6 +113,18 @@
                  }
     }
   }
+  function helpService($http) {
+    return {
+      fetchHelp: function(code) {
+                   code = 683; //sorry
+                   return $http({
+                     url: './data/2013/help-' + code + '.json'
+                   }).then(function (res) {
+                     return res.data;
+                   })
+                 }
+    }
+  }
   function chargeBlock() {
     return {
       templateUrl: './app/charge.html',
@@ -100,25 +132,26 @@
         function getAttr(name) {
           return  $parse($attrs[name])($scope);
         }
-        var cc = this;
+        var cbc = this;
         var charge = getAttr('chargeBlock');
-        var max = 100000;
-        cc.title = charge.hospital.name;
-        cc.stickerPrice = Number(charge.chargemaster) / 100;
-        cc.medicarePrice = Number(charge.medicare) / 100;
-        cc.ratio = cc.stickerPrice / cc.medicarePrice;
-        cc.stickerWidth = Math.floor(80 * cc.stickerPrice / max) + '%';
-        cc.medicareWidth = Math.floor(80 * cc.medicarePrice / max) + '%';
+        var max = getAttr('chargeBlockMax') / 100;
+        cbc.title = charge.hospital.name;
+        cbc.stickerPrice = Number(charge.chargemaster) / 100;
+        cbc.medicarePrice = Number(charge.medicare) / 100;
+        cbc.ratio = cbc.stickerPrice / cbc.medicarePrice;
+        cbc.stickerWidth = Math.floor(80 * cbc.stickerPrice / max) + '%';
+        cbc.medicareWidth = Math.floor(80 * cbc.medicarePrice / max) + '%';
       },
-      controllerAs: 'cc'
+      controllerAs: 'cbc'
     }
   }
   angular.module('chargemaster', ['ui.router'])
     .config(configure)
     .controller('home', homeController)
     .controller('code', codeController)
-    .controller('help', nothing)
-    .controller('costs', nothing)
+    .controller('help', helpController)
+    .controller('generic', generic)
     .directive('chargeBlock', chargeBlock)
     .service('codeService', codeService)
+    .service('helpService', helpService)
 })();

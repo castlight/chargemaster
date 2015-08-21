@@ -1,2 +1,13 @@
-help
-<a ui-sref="code">back</a>
+<div>
+  <header>
+    <a class="back-button" ui-sref="code({state: helpc.state, city: helpc.city, code: helpc.code})"></a>
+    <h2>{{helpc.help.name}}</h2>
+  </header>
+  <div style="position: absolute; top: 80px; overflow: auto;">
+    <div style="margin: 0px 20px;">
+      <img src="public/diagnosis-help-topimage.png" style="display: block; margin: 0px auto;">
+      <div class="diagnosis-help" ng-bind-html="helpc.help.text">
+      </div>
+    </div>
+  </div>
+</div>
