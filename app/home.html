@@ -1,0 +1,11 @@
+<select ng-model="hc.selectedCity"
+  ng-options="city for city in cities[hc.selectedState]" >
+</select>
+<select ng-model="hc.selectedState" ng-options="state for state in states">
+</select>
+<div ng-repeat="diagnosisFamily in hc.diagnosisFamilies">
+  <h4>{{diagnosisFamily.name}}<h4>
+<div ng-repeat="drg in diagnosisFamily.DRGs">
+  <a ui-sref="code({ code:drg.code, city: hc.selectedCity, state: hc.selectedState })">{{drg.code}} {{drg.name}}</a>
+</div>
+</div>
