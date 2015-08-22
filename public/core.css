@@ -1491,7 +1491,7 @@ table.no_indent th, table.no_indent td {
 .row {
     width: 99%;
     height: 160px;
-    background: url(/public/home-topimage.png);
+    background: url(home-topimage.png);
 }
 
 .strong {
